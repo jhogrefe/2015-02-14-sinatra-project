@@ -10,14 +10,18 @@ They can also add text suggestions and translations into a separate table of the
 ## API Used
 
 **Microsoft Translator:**
+
 http://www.microsoft.com/translator/translator-api.aspx
+
 Microsoft Translator is a machine translation service. The service translates a "source" text from one language to a different "target" language. The free API allows up to 2 million character translations per month and should be acceptable for the project.
 
 
 ## Gem Used
 
 **microsoft_translator:**
+
 https://github.com/ikayzo/microsoft_translator
+
 Ruby wrapper for Microsoft Translate HTTP API. Currently only supports translating one string of text at a time, which is acceptable for this project.
 
 
