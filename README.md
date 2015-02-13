@@ -29,12 +29,12 @@ Ruby wrapper for Microsoft Translate HTTP API. Currently only supports translati
 
 **Here's what I want to do:**
 
-Store a database of common translations
-Search database for matching text
-Use Microsoft Translator API as alternative when database search returns nothing
-Use microsoft_translator gem to interact with Microsoft Translator
-Add new translation records by user
-Separate search of user database for matching text
+ * Store a database of common translations
+ * Search database for matching text
+ * Use Microsoft Translator API as alternative when database search returns nothing
+ * Use microsoft_translator gem to interact with Microsoft Translator
+ * Add new translation records by user
+ * Separate search of user database for matching text
 
 **OPTIONAL:**
 Use a second gem called bad_word_detector to filter offensive language for the user created language table:
