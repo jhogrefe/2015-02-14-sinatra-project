@@ -4,6 +4,7 @@ The Software Localization project is a web tool that software developers can use
 
 For example: A user can go to the website and enter a string of text like "Save As". The Software Localization website will store a database of common translations in multiple languages and will search this database for the text that was entered. If found, the website will return the entered text, along with the text translated into any supported language. If not found it will use the Microsoft Translator API to offer alternative translations.
 
+**OPTIONAL:**
 They can also add text suggestions and translations into a separate table of the database so users can have a third option: search based on feedback from other users.
 
 
@@ -29,12 +30,12 @@ Ruby wrapper for Microsoft Translate HTTP API. Currently only supports translati
 
 **Here's what I want to do:**
 
- * Store a database of common translations
- * Search database for matching text
- * Use Microsoft Translator API as alternative when database search returns nothing
- * Use microsoft_translator gem to interact with Microsoft Translator
- * Add new translation records by user
- * Separate search of user database for matching text
+ * Store a table of common translations in the database. This will be created by me.
+ * Ability to search the translation tables in the database for matching text, which will return the translated text to the user.
+ * Use Microsoft Translator API as alternative when searching the tables in my database returns nothing.
+ * Use microsoft_translator gem to interact with Microsoft Translator.
+ * Add new translation records by user in their own table of the database. For example, a user who speaks French may want to add a new text record for "Save as PDF" in French; they can enter the English and French versions and submit to add to the user table of the database.
+ * Separate search of translations entered by users in their own table of the database for matching text. If a user doesn't find a translation of their text when doing a search in the main table of the database (created by me), they have the option to search the user table of the database for the translations.
 
 **OPTIONAL:**
 Use a second gem called bad_word_detector to filter offensive language for the user created language table:
