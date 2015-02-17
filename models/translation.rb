@@ -41,8 +41,6 @@ class Translation
   # Parameters:
   # translation_to_update - String, new name of translation record.
   # id_translation        - Integer, ID of translation record to update.
-  # edit_term_id          - Integer, foreign key for terms table.
-  # edit_language_id      - Integer, foreign key for languages table.
   #
   # Returns:
   # String, new value for translation field, and Integers for language_id and 
@@ -50,9 +48,8 @@ class Translation
   #
   # State Changes:
   # Saves new value in 'translations' table in the database.
-  def edit(translation_to_update, edit_term_id, edit_language_id, id_translation)
-    DATABASE.execute("UPDATE translations SET (term_id = '#{edit_term_id}', 
-    language_id = '#{edit_language_id}', translation = '#{translation_to_update}') 
+  def edit(translation_to_update, id_translation)
+    DATABASE.execute("UPDATE translations SET translation = '#{translation_to_update}' 
     WHERE id = '#{id_translation}'")        
   end
   

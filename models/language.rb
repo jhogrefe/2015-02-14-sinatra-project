@@ -31,7 +31,7 @@ class Language
   # Inserts values into 'languages' table in the database as a new language
   # record.
   def insert
-    DATABASE.execute("INSERT INTO languages (term) 
+    DATABASE.execute("INSERT INTO languages (language) 
                       VALUES ('#{@language}')")
     @id = DATABASE.last_insert_row_id
   end
@@ -48,9 +48,9 @@ class Language
   #
   # State Changes:
   # Saves new value in 'languages' table in the database.
-  def edit(language_to_update, id_term)
+  def edit(language_to_update, id_language)
     DATABASE.execute("UPDATE languages SET language = '#{language_to_update}' 
-    WHERE id = '#{id_language}'")        
+    WHERE id = '#{id_language}'")  
   end
 
   # Public: #delete
