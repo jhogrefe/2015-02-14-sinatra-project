@@ -1,0 +1,15 @@
+<h1>Delete Term</h1>
+
+<p>
+Select which English term you would like to delete.
+</p>
+
+  <form action="/deleted_term">
+    <select name="term_id">
+      <% Term.all.each do |t| %>
+        <option value="<%= t.id %>"><%= t.id%> - <%= t.term %></option>
+      <% end %>
+    </select>
+    <br><br>
+    <input type="submit" value="Submit" class="btn">
+  </form>
