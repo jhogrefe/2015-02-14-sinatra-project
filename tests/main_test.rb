@@ -6,7 +6,9 @@ DATABASE = SQLite3::Database.new('../database/localization_test.db')
 
 
 require_relative "../database/database_setup"
-
+require_relative "../models/term.rb"
+require_relative "../models/language.rb"
+require_relative "../models/translation.rb"
 
 class LocalizationTest < Minitest::Test
   
