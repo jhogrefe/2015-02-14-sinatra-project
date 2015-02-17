@@ -23,7 +23,7 @@ p, body {
 }
 
  
-input, textarea, select {
+input, textarea {
   border: 1px solid #555;
   padding: 0.5em;
   font-size: 15px;
@@ -36,6 +36,18 @@ input, textarea, select {
   border-radius: 4px;
 }
 
+select {
+  border: 1px solid #555;
+  padding: 0.5em;
+  font-size: 15px;
+  line-height: 1.2em;
+  width: 30%;
+  background: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+}
 
 .btn {
   background: #45b5ff;
