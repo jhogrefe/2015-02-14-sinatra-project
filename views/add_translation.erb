@@ -1,0 +1,25 @@
+<h1>Add Translation</h1>
+
+<p>
+   Enter the new software translation below.
+</p>
+
+  <form action="/product">
+    <select name="term_id">
+      <% Term.all.each do |x| %>
+        <option value="<%= x.id %>"><%= x.term %></option>
+      <% end %>
+    </select>
+    <br><br>
+    <select name="language_id">
+      <% Language.all.each do |x| %>
+        <option value="<%= x.id %>"><%= x.language %></option>
+      <% end %>
+    </select>
+    <br><br>
+    <strong>Translation:</strong><br>
+    <input type="text" name="translation">
+    <br><br>
+
+    <input type="submit" value="Submit">
+  </form>
