@@ -1,0 +1,18 @@
+<h1>Edit Term</h1>
+
+<p>
+Select which English term you would like to edit and enter the new word or short text string in the field below.
+</p>
+
+  <form action="/saved_term">
+    <select name="term_id">
+      <% Term.all.each do |t| %>
+        <option value="<%= t.id %>"><%= t.id%> - <%= t.term %></option>
+      <% end %>
+    </select>
+    <br><br>
+    <strong>Change term to:</strong><br>
+    <input type="text" name="term">
+    <br><br>
+    <input type="submit" value="Submit" class="btn">
+  </form>

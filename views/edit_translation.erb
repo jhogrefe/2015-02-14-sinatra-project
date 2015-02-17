@@ -1,0 +1,19 @@
+<h1>Edit Translation</h1>
+
+<p>
+Select which translation you would like to edit and enter the new translation in the field below.
+</p>
+
+  <form action="/saved_translation">
+    <select name="translation_id">
+      <% Translation.all.each do |tr| %>
+        <option value="<%= tr.id %>"><%= tr.id%> - <%= tr.translation
+           %></option>
+      <% end %>
+    </select>
+    <br><br>
+    <strong>Change translation to:</strong><br>
+    <input type="text" name="translation">
+    <br><br>
+    <input type="submit" value="Submit" class="btn">
+  </form>
