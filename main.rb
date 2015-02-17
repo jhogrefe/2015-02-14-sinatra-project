@@ -19,3 +19,12 @@ get "/translation" do
   t1.find
   erb :translation, :layout => :boilerplate
 end
+
+get "/admin" do
+  erb :admin, :layout => :admin_boilerplate 
+end
+
+
+get "/add_translation" do
+  erb :add_translation, :layout => :admin_boilerplate
+end
