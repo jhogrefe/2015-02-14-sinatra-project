@@ -12,4 +12,4 @@ DATABASE.execute("CREATE TABLE IF NOT EXISTS translations
                   (id INTEGER PRIMARY KEY,
                   term_id INTEGER,
                   language_id INTEGER,
-                  translation TEXT")
+                  translation TEXT)")
