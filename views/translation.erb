@@ -1,12 +1,19 @@
 <h1>Translation Complete!</h1>
 <h2>Just copy and paste the translations below into your localization files.</h2>
 <hr>
-<h3><%= @term %></h3>
+<h2><strong><%= @term %></strong></h2>
 <hr>
 <p>
-   <strong>French:</strong> <%= @name %><br>
-   <strong>Spanish:</strong> <%= @cost %><br>
-   <strong>German:</strong> <%= @serial %><br>
-   <strong>Italian:</strong> <%= @quantity %><br>
+<% @s2.each do |translation| %>
+   <strong><%= get_language(translation) %>:&nbsp;</strong> <%= translation.translation %><br><br>
+<% end %>
 </p>
-<br><a href="http://localhost:4567">&gt&gtHome&lt&lt</a>
+<hr>
+<p>
+  New Search:<br>
+  <form action="/translation">
+    <input type="text" name="term" required size="90" autofocus><br><br>
+    <input type="submit" value="Translate" class="btn">
+  </form>
+</p>
+<br><a href="http://localhost:4567">Home</a>
