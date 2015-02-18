@@ -1,0 +1,11 @@
+<h1>Terms</h1>
+<h2>Below is the current list of terms.</h2>
+<hr>
+<% @term.each do |terms| %>
+  <p>
+     <strong>ID:</strong> <%= terms.id %> / <strong>Term:</strong> <%= terms.term %>
+  </p>
+<% end %>
+
+<br><a href="http://localhost:4567/admin">Admin Home</a>&nbsp;&nbsp;
+<a href="http://localhost:4567">Exit Admin</a>

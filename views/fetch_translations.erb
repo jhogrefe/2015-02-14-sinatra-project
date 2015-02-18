@@ -1,0 +1,11 @@
+<h1>Translations</h1>
+<h2>Below is the current list of translations.</h2>
+<hr>
+<% @translation.each do |translations| %>
+  <p>
+     <strong>ID:</strong> <%= translations.id %> / <strong>Translation:</strong> <%= translations.translation %>
+  </p>
+<% end %>
+
+<br><a href="http://localhost:4567/admin">Admin Home</a>&nbsp;&nbsp;
+<a href="http://localhost:4567">Exit Admin</a>

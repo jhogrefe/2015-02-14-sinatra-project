@@ -1,0 +1,11 @@
+<h1>Languages</h1>
+<h2>Below is the current list of languages.</h2>
+<hr>
+<% @language.each do |languages| %>
+  <p>
+     <strong>ID:</strong> <%= languages.id %> / <strong>Language:</strong> <%= languages.language %>
+  </p>
+<% end %>
+
+<br><a href="http://localhost:4567/admin">Admin Home</a>&nbsp;&nbsp;
+<a href="http://localhost:4567">Exit Admin</a>
