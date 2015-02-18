@@ -4,26 +4,31 @@ require 'sqlite3'
 
 DATABASE = SQLite3::Database.new('database/localization.db')
 
-
+require_relative "helpers/iterate_over_language_array.rb"
 require_relative "database/database_setup.rb"
 require_relative "models/term.rb"
 require_relative "models/language.rb"
 require_relative "models/translation.rb"
+
+helpers GetLanguage
 
 get "/" do
   erb :main_search, :layout => :boilerplate
 end
 
 get "/translation" do 
-  t1 = Translation.new(params)  
-  t1.find
+  s1 = Term.new(params)
+  s1 = Term.search("#{params["term"]}")
+  @s2 = Translation.find(s1)
+  @term = "#{params["term"]}"
   erb :translation, :layout => :boilerplate
 end
+
+
 
 get "/admin" do
   erb :admin, :layout => :admin_boilerplate 
 end
-
 
 
 get "/add_language" do
@@ -60,6 +65,13 @@ get "/deleted_language" do
 
   erb :deleted, :layout => :admin_boilerplate
 end
+
+
+get "/fetch_languages" do
+  @language = Language.all
+  erb :fetch_languages, :layout => :admin_boilerplate
+end
+
 
 
 
@@ -99,6 +111,12 @@ get "/deleted_term" do
 end
 
 
+get "/fetch_terms" do
+  @term = Term.all
+  erb :fetch_terms, :layout => :admin_boilerplate
+end
+
+
 
 get "/add_translation" do
   erb :add_translation, :layout => :admin_boilerplate
@@ -133,3 +151,10 @@ get "/deleted_translation" do
   tr3.delete(params["translation_id"])
   erb :deleted, :layout => :admin_boilerplate
 end
+
+
+get "/fetch_translations" do
+  @translation = Translation.all
+  erb :fetch_translations, :layout => :admin_boilerplate
+end
+
