@@ -66,8 +66,7 @@ class Term
   # Removes the term record from the database.   
   def delete(id_to_delete)
     DATABASE.execute("DELETE FROM terms WHERE id = '#{id_to_delete}'")
-  end
-  
+  end  
   
   # Public: .all
   # Class method that returns all records in the table

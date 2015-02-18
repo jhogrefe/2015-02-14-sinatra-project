@@ -52,36 +52,6 @@ class Translation
     DATABASE.execute("UPDATE translations SET translation = '#{translation_to_update}' 
     WHERE id = '#{id_translation}'")        
   end
-  
-  # Public: #edit USE THIS IF ABOVE ONE DOESN'T WORK.
-  #
-  # Parameters:
-  # None.
-  #
-  # Returns:
-  # None.
-  #
-  # State Changes:
-  # Sets the new values in the database.
-  # def edit
-  #   get_product = []
-  #   instance_variables.each do |x|
-  #     get_product << x.to_s.delete("@")
-  #   end
-  #
-  #   product_grabber = []
-  #   get_product.each do |y|
-  #     local_var = self.send(y)
-  #     if local_var.is_a?(Integer)
-  #       product_grabber << "#{y} = #{local_var}"
-  #     else
-  #       product_grabber << "#{y} = '#{local_var}'"
-  #     end
-  #   end
-  #
-  #   var = product_grabber.join(", ")
-  #   DATABASE.execute("UPDATE products SET #{var} WHERE id = #{id}")
-  # end
 
   # Public: #delete
   # Gets the id value and deletes the translation record matching the id.
@@ -117,6 +87,6 @@ class Translation
        results_as_objects << self.new(r)
      end
      results_as_objects
-   end
+  end
 
 end
