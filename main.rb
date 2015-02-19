@@ -18,8 +18,8 @@ end
 
 get "/translation" do 
   s1 = Term.new(params)
-  s1 = Term.search("#{params["term"]}")
-  @s2 = Translation.find(s1)
+  s1 = Term.search("#{params["term"].downcase}")
+  @s2 = Translation.find(s1[0].id)
   @term = "#{params["term"]}"
   erb :translation, :layout => :boilerplate
 end
