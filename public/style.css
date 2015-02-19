@@ -20,6 +20,10 @@ p, body {
    font-family: 'Nobile', Helvetica, Arial, sans-serif;
 }
 
+.lower {
+   text-transform: lowercase;
+}
+
 a:link { 
 	font-weight: normal; 
 	text-decoration: none; 
