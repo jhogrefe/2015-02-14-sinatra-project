@@ -69,6 +69,27 @@ class Translation
   end
   
 
+  # Public: .find
+  # Class method that returns all records in the table
+  #
+  # Parameters:
+  # None.
+  #
+  # Returns:
+  # All table records as objects.
+  #
+  # State Changes:
+  # None.
+  def self.find(term_id)
+     results = DATABASE.execute("SELECT * FROM translations WHERE term_id = #{term_id}")
+     results_as_objects = []
+     results.each do |r|
+       results_as_objects << self.new(r)
+     end
+     results_as_objects
+  end
+  
+  
   # Public: .all
   # Class method that returns all records in the table
   #

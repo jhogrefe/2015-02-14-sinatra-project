@@ -10,7 +10,7 @@
 class Term
   
   attr_reader :id
-  attr_accessor :term
+  attr_accessor :term 
   
   def initialize(options)
     @term = options["term"]
@@ -67,6 +67,26 @@ class Term
   def delete(id_to_delete)
     DATABASE.execute("DELETE FROM terms WHERE id = '#{id_to_delete}'")
   end  
+
+  # Public: .search
+  # Class method that returns all records in the table
+  #
+  # Parameters:
+  # None.
+  #
+  # Returns:
+  # All table records as objects.
+  #
+  # State Changes:
+  # None.  
+  def self.search(term_arg)
+     results = DATABASE.execute("SELECT * FROM terms WHERE term = '#{term_arg}'")   
+     results_as_objects = []   
+     results.each do |r|
+       results_as_objects << self.new(r)
+     end  
+     results_as_objects
+  end
   
   # Public: .all
   # Class method that returns all records in the table
