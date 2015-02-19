@@ -1,6 +1,8 @@
 require 'pry'
 require 'sinatra'
 require 'sqlite3'
+require 'rubygems'
+require 'bing_translator'
 
 DATABASE = SQLite3::Database.new('database/localization.db')
 
@@ -17,16 +19,20 @@ get "/" do
 end
 
 
-
 get "/translation" do
-  unless params[:term] == nil
-    redirect to("/custom_search?term=#{params[:term]}")
-    @term = "#{params["term"]}"
-  end
   s1 = Term.new(params)
-  s1 = Term.search("#{params["term"].downcase}")
-  @s2 = Translation.find(s1[0].id)
-  @term = "#{params["term"]}"
+  if s1.term == ''
+    redirect to("/")
+  else
+    s1 = Term.search("#{params["term"].downcase}")
+    if s1[0] == nil
+      redirect to("/custom_search?term=#{params[:term]}")
+      @term = "#{params["term"]}"
+    else @term = "#{params["term"]}"
+    end
+    @s2 = Translation.find(s1[0].id)
+  end
+  
   erb :translation, :layout => :boilerplate
 end
 
@@ -34,6 +40,13 @@ get "/custom_search" do
   erb :custom_search, :layout => :boilerplate
 end
 
+get "/custom_translation" do
+  translator = BingTranslator.new('free-software-translation', 
+  '6njjbzRCq7rG3+CbFZzN+6jEV5ed63U9+2oqkJ9NuKo=')
+  translated = translator.translate description, :from => 'en', 
+  :to => 'fr', 'es', 'de', 'it'
+  erb :custom_translation, :layout => :boilerplate
+end
 
 
 get "/admin" do
