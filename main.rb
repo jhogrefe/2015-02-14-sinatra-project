@@ -16,12 +16,22 @@ get "/" do
   erb :main_search, :layout => :boilerplate
 end
 
-get "/translation" do 
+
+
+get "/translation" do
+  unless params[:term] == nil
+    redirect to("/custom_search?term=#{params[:term]}")
+    @term = "#{params["term"]}"
+  end
   s1 = Term.new(params)
   s1 = Term.search("#{params["term"].downcase}")
   @s2 = Translation.find(s1[0].id)
   @term = "#{params["term"]}"
   erb :translation, :layout => :boilerplate
+end
+
+get "/custom_search" do
+  erb :custom_search, :layout => :boilerplate
 end
 
 
