@@ -1,0 +1,17 @@
+<center>
+  <br><br>
+  <h1>Free Software Translation</h1>
+  <h2><%= "#{params[:term].upcase}" %> NOT FOUND!</h2>
+    <p>
+    Your text was not found in our translation database. You can try a search below using Microsoft Translator<br> (just note that the translation may not exactly relate to software terms). <br><br>
+    </p>
+
+    <form action="/translation">
+      <input type="text" name="term" value="<%= "#{params[:term]}" %>" required size="90" class="lower" autofocus><br><br>
+      <input type="submit" value="Translate" class="btn">
+    </form>
+
+    <br><br><br><br><br><br><br><br><br><br>
+    <a href="http://localhost:4567">New Search</a>
+</center>
+
