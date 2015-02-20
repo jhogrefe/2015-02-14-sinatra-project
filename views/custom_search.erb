@@ -1,13 +1,13 @@
 <center>
   <br><br>
   <h1>Free Software Translation</h1>
-  <h2><%= "#{params[:term].upcase}" %> NOT FOUND!</h2>
+  <h2><strong><%= "#{params[:term].upcase}" %> NOT FOUND!</strong></h2>
     <p>
-    Your text was not found in our translation database. You can try a search below using Microsoft Translator<br> (just note that the translation may not exactly relate to software terms). <br><br>
+    Your text was not found in our translation database.<br><br> You can try a search below using Microsoft Translator&reg;<br> <em>Please note the translation may not relate exactly to software terms).</em> <br><br>
     </p>
 
-    <form action="/translation">
-      <input type="text" name="term" value="<%= "#{params[:term]}" %>" required size="90" class="lower" autofocus><br><br>
+    <form action="/custom_translation">
+      <input type="text" name="translate" value="<%= "#{params[:term]}" %>" required size="90" class="lower" autofocus><br><br>
       <input type="submit" value="Translate" class="btn">
     </form>
 
