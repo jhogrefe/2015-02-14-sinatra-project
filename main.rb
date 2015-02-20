@@ -36,17 +36,26 @@ get "/translation" do
   erb :translation, :layout => :boilerplate
 end
 
+
 get "/custom_search" do
   erb :custom_search, :layout => :boilerplate
 end
 
 get "/custom_translation" do
-  translator = BingTranslator.new('free-software-translation', 
-  '6njjbzRCq7rG3+CbFZzN+6jEV5ed63U9+2oqkJ9NuKo=')
-  translated = translator.translate description, :from => 'en', 
-  :to => 'fr', 'es', 'de', 'it'
+  cs1 = BingTranslator.new('free-software-translation',
+  '6njjbzRCq7rG3+CbFZzN+6jEV5ed63U9+2oqkJ9NuKo=', params)
+  if params["translate"] == ''
+    redirect to("/")
+  else
+    @es = cs1.translate("#{params["translate"]}", :from => 'en', :to => 'es')
+    @fr = cs1.translate("#{params["translate"]}", :from => 'en', :to => 'fr')
+    @de = cs1.translate("#{params["translate"]}", :from => 'en', :to => 'de')
+    @it = cs1.translate("#{params["translate"]}", :from => 'en', :to => 'it')
+    @cs1 = "#{params["translate"]}"
+  end
   erb :custom_translation, :layout => :boilerplate
 end
+
 
 
 get "/admin" do
@@ -94,7 +103,6 @@ get "/fetch_languages" do
   @language = Language.all
   erb :fetch_languages, :layout => :admin_boilerplate
 end
-
 
 
 
@@ -180,4 +188,3 @@ get "/fetch_translations" do
   @translation = Translation.all
   erb :fetch_translations, :layout => :admin_boilerplate
 end
-
