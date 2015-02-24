@@ -3,41 +3,41 @@
 ###############################
 
 get "/add_translation" do
-  erb :add_translation, :layout => :admin_boilerplate
+  erb :'translation_views/add_translation', :layout => :'boilerplates/admin_boilerplate'
 end
 
 get "/new_translation" do
   tr1 = Translation.new(params)
   tr1.insert
   @translation = "#{params["translation"]}"
-  erb :new_translation, :layout => :admin_boilerplate
+  erb :'translation_views/new_translation', :layout => :'boilerplates/admin_boilerplate'
 end
 
 
 get "/edit_translation" do
-  erb :edit_translation, :layout => :admin_boilerplate
+  erb :'translation_views/edit_translation', :layout => :'boilerplates/admin_boilerplate'
 end
 
 get "/saved_translation" do
   tr2 = Translation.new(params)
   tr2.edit("#{params["translation"]}", "#{params["translation_id"]}")
   @translation = "#{params["translation"]}"
-  erb :saved_translation, :layout => :admin_boilerplate
+  erb :'translation_views/saved_translation', :layout => :'boilerplates/admin_boilerplate'
 end
 
 
 get "/delete_translation" do
-  erb :delete_translation, :layout => :admin_boilerplate
+  erb :'translation_views/delete_translation', :layout => :'boilerplates/admin_boilerplate'
 end
 
 get "/deleted_translation" do
   tr3 = Translation.new(params)
   tr3.delete(params["translation_id"])
-  erb :deleted, :layout => :admin_boilerplate
+  erb :deleted, :layout => :'boilerplates/admin_boilerplate'
 end
 
 
 get "/fetch_translations" do
   @translation = Translation.all
-  erb :fetch_translations, :layout => :admin_boilerplate
+  erb :'translation_views/fetch_translations', :layout => :'boilerplates/admin_boilerplate'
 end

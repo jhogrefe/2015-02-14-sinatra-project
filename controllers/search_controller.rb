@@ -3,7 +3,7 @@
 ###########################
 
 get "/" do
-  erb :main_search, :layout => :boilerplate
+  erb :'search_views/main_search', :layout => :'boilerplates/boilerplate'
 end
 
 
@@ -21,7 +21,7 @@ get "/translation" do
     @s2 = Translation.find(s1[0].id)
   end
   
-  erb :translation, :layout => :boilerplate
+  erb :'translation_views/translation', :layout => :'boilerplates/boilerplate'
 end
 
 
@@ -30,7 +30,7 @@ end
 #################
 
 get "/custom_search" do
-  erb :custom_search, :layout => :boilerplate
+  erb :'search_views/custom_search', :layout => :'boilerplates/boilerplate'
 end
 
 get "/custom_translation" do
@@ -45,5 +45,5 @@ get "/custom_translation" do
     @it = cs1.translate("#{params["translate"]}", :from => 'en', :to => 'it')
     @cs1 = "#{params["translate"]}"
   end
-  erb :custom_translation, :layout => :boilerplate
+  erb :'translation_views/custom_translation', :layout => :'boilerplates/boilerplate'
 end
