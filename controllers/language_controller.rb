@@ -1,12 +1,3 @@
-###################
-# ADMIN HOME PAGE #
-###################
-
-get "/admin" do
-  erb :'language_views/admin', :layout => :'boilerplates/admin_boilerplate'
-end
-
-
 ############################
 # ADMIN - MANAGE LANGUAGES #
 ############################

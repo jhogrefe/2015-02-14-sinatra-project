@@ -1,10 +1,6 @@
-###########################
-# HOME PAGE - MAIN SEARCH #
-###########################
-
-get "/" do
-  erb :'search_views/main_search', :layout => :'boilerplates/boilerplate'
-end
+###############
+# MAIN SEARCH #
+###############
 
 
 get "/translation" do
