@@ -24,7 +24,7 @@ class Translation
   # Parameters:
   # None.
   #
-  # Returns: Integer,
+  # Returns: string, value of the translation field.
   #
   # State Changes:
   # Inserts values into 'translations' table in the database as a new 
