@@ -3,8 +3,7 @@ input, textarea, select {
  }
 
 body {
-/*   background-image: url("images/background.jpg");
-*/   background-color: #CDEFFA;
+   background-color: #CDEFFA;
    margin-top: 0px;
 }
 
@@ -22,6 +21,12 @@ p, body {
 
 .lower {
    text-transform: lowercase;
+}
+
+img {
+   max-width: 100%;
+   height: auto;
+   width: auto\9; /* ie8 */
 }
 
 a:link { 
@@ -51,7 +56,6 @@ input, textarea, select {
   -moz-border-radius: 4;
   border-radius: 4px;
 }
-
 
 .btn {
   background: #45b5ff;
