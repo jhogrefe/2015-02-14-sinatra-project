@@ -43,8 +43,7 @@ class Translation
   # id_translation        - Integer, ID of translation record to update.
   #
   # Returns:
-  # String, new value for translation field, and Integers for language_id and 
-  # term_id in updated translation record.
+  # Empty Array.
   #
   # State Changes:
   # Saves new value in 'translations' table in the database.
@@ -60,7 +59,7 @@ class Translation
   # id_to_delete - Integer, ID of language to delete.
   #
   # Returns:
-  # The primary key of the translation record being deleted, as a string.
+  # Empty Array.
   #
   # State Changes:
   # Removes the translation record from the database.   
@@ -109,5 +108,5 @@ class Translation
      end
      results_as_objects
   end
-
+  
 end

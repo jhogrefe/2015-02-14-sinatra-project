@@ -44,7 +44,7 @@ class Language
   # id_language        - Integer, ID of language to update.
   #
   # Returns:
-  # String, new value for language field in updated language record.
+  # Empty Array.
   #
   # State Changes:
   # Saves new value in 'languages' table in the database.
@@ -60,7 +60,7 @@ class Language
   # id_to_delete - Integer, ID of language to delete.
   #
   # Returns:
-  # The primary key of the language record being deleted, as a string.
+  # Empty Array.
   #
   # State Changes:
   # Removes the language record from the database.   

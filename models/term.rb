@@ -44,13 +44,13 @@ class Term
   # id_term        - Integer, ID of term to update.
   #
   # Returns:
-  # String, new value for term field in updated term record.
+  # Empty Array.
   #
   # State Changes:
   # Saves new value in 'terms' table in the database.
   def edit(term_to_update, id_term)
     DATABASE.execute("UPDATE terms SET term = '#{term_to_update}' 
-    WHERE id = '#{id_term}'")        
+    WHERE id = '#{id_term}'")
   end
 
   # Public: #delete
@@ -60,7 +60,7 @@ class Term
   # id_to_delete - Integer, ID of term to delete.
   #
   # Returns:
-  # The primary key of the term record being deleted, as a string.
+  # Empty Array.
   #
   # State Changes:
   # Removes the term record from the database.   
