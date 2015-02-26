@@ -6,7 +6,7 @@
     Your text was not found in our translation database.<br><br> You can try a search below using Microsoft Translator&reg;<br> <em>Please note: the translation may not relate exactly to software terms.</em> <br><br>
     </p>
 
-    <form action="/custom_translation">
+    <form action="/custom_translation" method="post">
       <input type="text" name="translate" value="<%= "#{params[:term]}" %>" required size="90" class="lower" autofocus><br><br>
       <input type="submit" value="Translate" class="btn">
     </form>
