@@ -1,0 +1,19 @@
+# Creates new BingTranslator object and uses Microsoft Translator API to return 
+# translation.
+module DatabaseTranslation
+
+  def translate_using_db
+    s1 = Term.new(params)
+    if s1.term == ''
+      redirect to("/")
+    else
+      s1 = Term.search("#{params["term"].downcase}")
+      if s1[0] == nil
+        redirect to("/custom_search?term=#{params[:term]}")
+      else @term = "#{params["term"]}"
+      end
+      @s2 = Translation.find(s1[0].id)
+    end
+  end
+    
+end
