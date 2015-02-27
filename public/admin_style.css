@@ -1,25 +1,45 @@
 input, textarea, select {
-   -webkit-appearance: none;
- }
+  -webkit-appearance: none;
+}
+ 
+html {
+background:
+   url(../images/pattern-75dh.png)
+   top center / 200px 200px
+   repeat
+   fixed
+   padding-box
+   content-box
+   #E8F3FC;
+}
 
 body {
-/*   background-image: url("images/background.jpg");*/
-   background-color: #E8F3FC;
-   margin-top: 0px;
-   margin-left: 100px;
-   margin-right: 0px;
+   margin-top: 0;
+   margin-left: 20px;
+   margin-right: 20px;
 }
 
 h1 {
-   font-family: 'Roboto', sans-serif; font-weight: 100; font-size: 50px;
+   font-family: 'Roboto', Arial, sans-serif; 
+   font-weight: 100; 
+   font-size: 300%;
 }
 
 h2, h3, h4, h5, h6 {
-   font-family: 'Roboto', sans-serif; font-weight: 100;
+   font-family: 'Roboto', Arial, sans-serif; 
+   font-weight: 400;
+   font-size: 150%;
 }
 
 p, body {
    font-family: 'Nobile', Helvetica, Arial, sans-serif;
+}
+
+.transbox {
+    margin: 0;
+    background-color: #ffffff;
+    opacity: 0.7;
+    filter: alpha(opacity=70); /* For IE8 and earlier */
 }
 
 a:link { 
@@ -44,7 +64,8 @@ input, textarea {
   line-height: 1.2em;
   width: 50%;
   background: #fff;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+  background: -webkit-gradient(linear, 
+    left top, left bottom, from(#ffffff), to(#ffffff));
   -webkit-border-radius: 4;
   -moz-border-radius: 4;
   border-radius: 4px;
@@ -57,7 +78,8 @@ select {
   line-height: 1.2em;
   width: 30%;
   background: #fff;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+  background: -webkit-gradient(linear, 
+    left top, left bottom, from(#ffffff), to(#ffffff));
   -webkit-border-radius: 4;
   -moz-border-radius: 4;
   border-radius: 4px;
@@ -78,7 +100,7 @@ select {
   color: #ffffff;
   font-size: 15px;
   padding: 10px 20px 10px 20px;
-  border: solid #1a9ef0 0px;
+  border: solid #1a9ef0 0;
   text-decoration: none;
 }
 
