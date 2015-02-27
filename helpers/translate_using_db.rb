@@ -1,5 +1,5 @@
-# Creates new BingTranslator object and uses Microsoft Translator API to return 
-# translation.
+# Creates new translation object and uses searches database translations table 
+# to return translation.
 module DatabaseTranslation
 
   def translate_using_db
