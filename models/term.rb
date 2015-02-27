@@ -25,7 +25,7 @@ class Term
   # None.
   #
   # Returns:
-  # New values as strings for the new term record.
+  # Empty Array.
   #
   # State Changes:
   # Inserts values into 'terms' table in the database as a new term

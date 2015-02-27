@@ -25,7 +25,7 @@ class Language
   # None.
   #
   # Returns:
-  # New values as strings for the new language record.
+  # Empty Array.
   #
   # State Changes:
   # Inserts values into 'languages' table in the database as a new language
