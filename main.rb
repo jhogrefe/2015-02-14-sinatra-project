@@ -1,7 +1,9 @@
+require 'rubygems'
+require 'bundler/setup'
+
 require 'pry'
 require 'sinatra'
 require 'sqlite3'
-require 'rubygems'
 require 'bing_translator'
 
 DATABASE = SQLite3::Database.new('database/localization.db')
