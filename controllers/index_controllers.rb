@@ -2,7 +2,7 @@
 # ADMIN HOME PAGE #
 ###################
 
-get "/admin" do
+get "/y3d8jedu38zm10lt" do
   erb :'language_views/admin', :layout => :'boilerplates/admin_boilerplate'
 end
 
