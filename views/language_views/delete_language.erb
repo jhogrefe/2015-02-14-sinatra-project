@@ -4,7 +4,7 @@
 Select which language you would like to delete.
 </p>
 
-  <form action="/deleted_language">
+  <form action="/deleted_language" method="post">
     <select name="language_id">
       <% Language.all.each do |l| %>
         <option value="<%= l.id %>"><%= l.id%> - <%= l.language %></option>

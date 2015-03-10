@@ -8,6 +8,7 @@
 # Methods:
 # #insert, #edit, #delete
 class Term
+  extend HelperMethods
   
   attr_reader :id
   attr_accessor :term 
@@ -81,11 +82,7 @@ class Term
   # None.  
   def self.search(term_arg)
      results = DATABASE.execute("SELECT * FROM terms WHERE term = '#{term_arg}'")   
-     results_as_objects = []   
-     results.each do |r|
-       results_as_objects << self.new(r)
-     end  
-     results_as_objects
+     hashes_into_objects(results)
   end
   
   # Public: .all
@@ -101,11 +98,7 @@ class Term
   # None.  
   def self.all   
      results = DATABASE.execute("SELECT * FROM terms")   
-     results_as_objects = []   
-     results.each do |r|
-       results_as_objects << self.new(r)
-     end  
-     results_as_objects
+     hashes_into_objects(results)
   end
-  
+
 end

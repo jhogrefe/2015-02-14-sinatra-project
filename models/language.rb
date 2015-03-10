@@ -8,6 +8,7 @@
 # Methods:
 # #insert, #edit, #delete
 class Language
+  extend HelperMethods
   
   attr_reader :id
   attr_accessor :language
@@ -82,11 +83,7 @@ class Language
   # None.  
   def self.all   
      results = DATABASE.execute("SELECT * FROM languages")   
-     results_as_objects = []   
-     results.each do |r|
-       results_as_objects << self.new(r)
-     end  
-     results_as_objects
+     hashes_into_objects(results)
   end
   
 end

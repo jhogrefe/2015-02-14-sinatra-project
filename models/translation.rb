@@ -7,6 +7,8 @@
 # Methods:
 # #insert, #edit, #delete
 class Translation
+  extend HelperMethods
+
   attr_reader   :id
   attr_accessor :term_id, :language_id, :translation
 
@@ -82,11 +84,7 @@ class Translation
   # None.
   def self.find(term_id)
      results = DATABASE.execute("SELECT * FROM translations WHERE term_id = #{term_id}")
-     results_as_objects = []
-     results.each do |r|
-       results_as_objects << self.new(r)
-     end
-     results_as_objects
+     hashes_into_objects(results)
   end
   
   
@@ -103,11 +101,7 @@ class Translation
   # None.
   def self.all
      results = DATABASE.execute("SELECT * FROM translations")
-     results_as_objects = []
-     results.each do |r|
-       results_as_objects << self.new(r)
-     end
-     results_as_objects
+     hashes_into_objects(results)
   end
   
 end

@@ -4,7 +4,7 @@
 Select which translation you would like to delete.
 </p>
 
-  <form action="/deleted_translation">
+  <form action="/deleted_translation" method="post">
     <select name="translation_id">
       <% Translation.all.each do |tr| %>
         <option value="<%= tr.id %>"><%= tr.id%> - <%= tr.translation %></option>

@@ -4,7 +4,7 @@
 First select an English term and language and then enter the new translation below.
 </p>
 
-  <form action="/new_translation">
+  <form action="/new_translation" method="post">
     <select name="term_id" width="50" required>
       <% Term.all.each do |t| %>
         <option value="<%= t.id %>"><%= t.id %> - <%= t.term %></option>

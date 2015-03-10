@@ -6,7 +6,7 @@ get "/add_language" do
   erb :'language_views/add_language', :layout => :'boilerplates/admin_boilerplate'
 end
 
-get "/new_language" do
+post "/new_language" do
   l1 = Language.new(params)
   l1.insert
   @language = "#{params["language"]}"
@@ -18,7 +18,7 @@ get "/edit_language" do
   erb :'language_views/edit_language', :layout => :'boilerplates/admin_boilerplate'
 end
 
-get "/saved_language" do
+post "/saved_language" do
   l2 = Language.new(params)
   l2.edit("#{params["language"]}", "#{params["language_id"]}")
   @language = "#{params["language"]}"
@@ -30,7 +30,7 @@ get "/delete_language" do
   erb :'language_views/delete_language', :layout => :'boilerplates/admin_boilerplate'
 end
 
-get "/deleted_language" do
+post "/deleted_language" do
   l3 = Language.new(params)
   l3.delete(params["language_id"])
 

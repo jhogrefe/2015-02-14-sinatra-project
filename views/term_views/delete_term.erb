@@ -4,7 +4,7 @@
 Select which English term you would like to delete.
 </p>
 
-  <form action="/deleted_term">
+  <form action="/deleted_term" method="post">
     <select name="term_id">
       <% Term.all.each do |t| %>
         <option value="<%= t.id %>"><%= t.id%> - <%= t.term %></option>

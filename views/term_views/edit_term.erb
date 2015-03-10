@@ -4,7 +4,7 @@
 Select which English term you would like to edit and enter the new word or short text string in the field below.
 </p>
 
-  <form action="/saved_term">
+  <form action="/saved_term" method="post">
     <select name="term_id">
       <% Term.all.each do |t| %>
         <option value="<%= t.id %>"><%= t.id%> - <%= t.term %></option>
