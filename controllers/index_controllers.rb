@@ -12,9 +12,9 @@ get "/y3d8jedu38zm10lt" do
 end
 
 
-############################
-# LOGIN PAGE - MAIN SEARCH #
-############################
+######################
+# LOGIN PAGE - ADMIN #
+######################
 
 get "/login" do
   erb :'user_views/login', :layout => :'boilerplates/boilerplate'
@@ -29,6 +29,18 @@ get "/y3d8jedu38zm10lt-ck" do
   end
 
   erb :'language_views/admin', :layout => :'boilerplates/admin_boilerplate' 
+end
+
+
+#######################
+# LOGOUT PAGE - ADMIN #
+#######################
+
+get "/logout" do
+    session.clear
+    redirect to("/login")
+    
+  erb :'user_views/login', :layout => :'boilerplates/boilerplate'
 end
 
 
