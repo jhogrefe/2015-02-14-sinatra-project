@@ -1,4 +1,5 @@
-DATABASE.results_as_hash = true
+DATABASE = SQLite3::Database.new('database/localization.db')
+
 
 DATABASE.execute("CREATE TABLE IF NOT EXISTS terms 
                   (id INTEGER PRIMARY KEY,
@@ -13,3 +14,10 @@ DATABASE.execute("CREATE TABLE IF NOT EXISTS translations
                   term_id INTEGER,
                   language_id INTEGER,
                   translation TEXT)")
+
+DATABASE.execute("CREATE TABLE IF NOT EXISTS users 
+                  (id INTEGER PRIMARY KEY,
+                   username TEXT,
+                   password TEXT)")
+                                                       
+set :database, {adapter: "sqlite3", database: "database/localization.db"}
