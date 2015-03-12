@@ -7,12 +7,13 @@ module DatabaseTranslation
     if s1.term == ''
       redirect to("/")
     else
-      s1 = Term.search("#{params["term"].downcase}")
+      s1 = Term.where({term: params[:term].downcase})
+      binding.pry
       if s1[0] == nil
         redirect to("/custom_search?term=#{params[:term]}")
       else @term = "#{params["term"]}"
       end
-      @s2 = Translation.find(s1[0].id)
+      @s2 = Translation.where({term_id: (s1[0].id)})
     end
   end
     

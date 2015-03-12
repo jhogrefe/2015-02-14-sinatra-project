@@ -8,6 +8,7 @@
 # Methods:
 # #insert, #edit, #delete
 class Term < ActiveRecord::Base
+  # has_many :languages, :translations
   # extend HelperMethods
   #
   # attr_reader :id

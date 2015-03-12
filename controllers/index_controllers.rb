@@ -21,8 +21,8 @@ get "/login" do
 end
 
 get "/y3d8jedu38zm10lt-ck" do
-  if results = User.where({username: params[:username]})
-    session[:user_id] = results[0].id
+  if results = User.find_by({username: params[:username]})
+    session[:user_id] = results.id
     redirect to("/y3d8jedu38zm10lt")
   else
     redirect to("/login")

@@ -7,9 +7,7 @@ get "/add_translation" do
 end
 
 post "/new_translation" do
-  tr1 = Translation.new(params)
-  tr1.insert
-  @translation = "#{params["translation"]}"
+  @translation = Translation.create({translation: params[:translation]})
   erb :'translation_views/new_translation', :layout => :'boilerplates/admin_boilerplate'
 end
 
@@ -31,8 +29,7 @@ get "/delete_translation" do
 end
 
 post "/deleted_translation" do
-  tr3 = Translation.new(params)
-  tr3.delete(params["translation_id"])
+  @translation = Translation.delete(params[:translation_id])
   erb :deleted, :layout => :'boilerplates/admin_boilerplate'
 end
 

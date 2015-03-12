@@ -7,9 +7,7 @@ get "/add_term" do
 end
 
 post "/new_term" do
-  t1 = Term.new(params)
-  t1.insert
-  @term = "#{params["term"]}"
+  @term = Term.create({term: params[:term]})
   erb :'term_views/new_term', :layout => :'boilerplates/admin_boilerplate'
 end
 
@@ -31,9 +29,7 @@ get "/delete_term" do
 end
 
 post "/deleted_term" do
-  t3 = Term.new(params)
-  t3.delete(params["term_id"])
-
+  @term = Term.delete(params[:term_id])
   erb :deleted, :layout => :'boilerplates/admin_boilerplate'
 end
 
