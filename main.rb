@@ -11,7 +11,6 @@ require 'bcrypt'
 require_relative "database/database_setup.rb"
 require_relative "controllers/index_controllers.rb"
 require_relative "controllers/search_controller.rb"
-require_relative "helpers/iterate_over_language_array.rb"
 require_relative "helpers/translate_using_db.rb"
 require_relative "helpers/translate_using_gem.rb"
 require_relative "controllers/language_controller.rb"
@@ -24,4 +23,4 @@ require_relative "models/translation.rb"
 
 enable :sessions
 
-helpers GetLanguage, TranslatorService, DatabaseTranslation
+helpers TranslatorService, DatabaseTranslation
