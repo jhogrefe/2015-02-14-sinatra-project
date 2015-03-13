@@ -8,7 +8,6 @@ module DatabaseTranslation
       redirect to("/")
     else
       s1 = Term.where({term: params[:term].downcase})
-      binding.pry
       if s1[0] == nil
         redirect to("/custom_search?term=#{params[:term]}")
       else @term = "#{params["term"]}"
