@@ -17,9 +17,8 @@ get "/edit_term" do
 end
 
 post "/saved_term" do
-  t2 = Term.new(params)
-  t2.edit("#{params["term"]}", "#{params["term_id"]}")
-  @term = "#{params["term"]}"
+  @term = Term.find(params[:term_id])
+  @term.update({term: params[:term]})
   erb :'term_views/saved_term', :layout => :'boilerplates/admin_boilerplate'
 end
 

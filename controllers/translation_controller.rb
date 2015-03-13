@@ -17,9 +17,8 @@ get "/edit_translation" do
 end
 
 post "/saved_translation" do
-  tr2 = Translation.new(params)
-  tr2.edit("#{params["translation"]}", "#{params["translation_id"]}")
-  @translation = "#{params["translation"]}"
+  @translation = Translation.find(params[:translation_id])
+  @translation.update({translation: params[:translation]})
   erb :'translation_views/saved_translation', :layout => :'boilerplates/admin_boilerplate'
 end
 

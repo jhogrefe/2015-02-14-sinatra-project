@@ -17,9 +17,8 @@ get "/edit_language" do
 end
 
 post "/saved_language" do
-  l2 = Language.new(params)
-  l2.edit("#{params["language"]}", "#{params["language_id"]}")
-  @language = "#{params["language"]}"
+  @language = Language.find(params[:language_id])
+  @language.update({language: params[:language]})
   erb :'language_views/saved_language', :layout => :'boilerplates/admin_boilerplate'
 end
 
