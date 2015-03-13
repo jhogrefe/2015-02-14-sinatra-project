@@ -5,11 +5,23 @@
     <p>
     </p>
 
-    <form action="/y3d8jedu38zm10lt-ck">
-      Username: <input type="text" name="username" required size="30"><br><br>
-      Password: <input type="text" name="password" required size="30"><br><br>
-      <input type="submit" value="Login" class="btn">
-    </form>
+  <form action="/y3d8jedu38zm10lt-ck" method="post">
+    Username:&nbsp;<input type="text" id="username" name="username" required autofocus><br>
+    &nbsp;&nbsp;Password:&nbsp;<input type="password" id="password" name="password" required>
+    <br><input type="submit" value="Login" class="btn">
+    <br>
+    <br>
+  </form>
+  <br><br><br>
+  <h2>Create New User</h2>
+  <form action="/new_user" method="post">
+    Username:&nbsp;<input type="text" id="username" name="username"><br>
+    &nbsp;&nbsp;Password:&nbsp;<input type="password" id="password" name="password">
+    <br><input type="submit" value="Create" class="btn">
+    <br>
+    <br>
+  </form>
+
     <br><br><br><br>
 
 <br><a href="/">Exit Admin</a>

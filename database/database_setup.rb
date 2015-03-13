@@ -18,6 +18,6 @@ DATABASE.execute("CREATE TABLE IF NOT EXISTS translations
 DATABASE.execute("CREATE TABLE IF NOT EXISTS users 
                   (id INTEGER PRIMARY KEY,
                    username TEXT,
-                   password TEXT)")
+                   password_hash TEXT)")
                                                        
 set :database, {adapter: "sqlite3", database: "database/localization.db"}

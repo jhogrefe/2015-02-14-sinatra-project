@@ -17,6 +17,7 @@ class User < ActiveRecord::Base
 
   def password=(new_password)
     @password = Password.create(new_password)
+    binding.pry
     self.password_hash = @password
   end
   
