@@ -1,12 +1,11 @@
 html {
   background:
-     url(../images/pattern-evs9.png)
      top center / 200px 200px
      repeat
      fixed
      padding-box
      content-box
-     #E0EBFF;
+     #FAFAFA;
 }
 
 h1 {

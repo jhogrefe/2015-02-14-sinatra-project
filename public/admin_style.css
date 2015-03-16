@@ -4,13 +4,12 @@ input, textarea, select {
  
 html {
 background:
-   url(../images/pattern-75dh.png)
    top center / 200px 200px
    repeat
    fixed
    padding-box
    content-box
-   #E8F3FC;
+   #FFFFFF;
 }
 
 body {
