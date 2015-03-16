@@ -17,7 +17,6 @@ class User < ActiveRecord::Base
 
   def password=(new_password)
     @password = Password.create(new_password)
-    binding.pry
     self.password_hash = @password
   end
   
@@ -46,12 +45,3 @@ class User < ActiveRecord::Base
   end
   
 end
-
-
-# password_hash column in table
-#
-# a = User.new({name: 'test_user'})
-# a.password = "fish"
-
-# p1 = Bcrypt::Password.create("password")
-# "password" == BCrypt::Password.new(p1)
