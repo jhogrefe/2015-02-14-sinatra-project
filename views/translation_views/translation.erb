@@ -4,7 +4,12 @@
 <h2><strong><%= @term %></strong></h2>
 <hr>
 <p>
-<%= @s2 %>
+<% @s2.each do |translation| %>
+   <strong>
+     <%= Language.find(translation.language_id).language %>:&nbsp;
+   </strong> 
+     <%= translation.translation %><br><br>
+<% end %>
 </p>
 <hr>
 <p>
