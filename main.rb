@@ -4,7 +4,9 @@ require 'bundler/setup'
 require 'pry'
 require 'sinatra'
 require 'sinatra/activerecord'
-require 'sqlite3'
+configure :development do
+  require 'sqlite3'
+end
 require 'bing_translator'
 require 'bcrypt'
 

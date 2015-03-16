@@ -14,26 +14,29 @@ configure :production do
 )
 end
 
-DATABASE = SQLite3::Database.new('database/localization.db')
+unless ActiveRecord::Base.connection.table_exists?(:terms)
+  ActiveRecord::Base.connection.create_table :terms do |t|
+    t.text :term
+  end 
+end
 
+unless ActiveRecord::Base.connection.table_exists?(:languages)
+  ActiveRecord::Base.connection.create_table :languages do |t|
+    t.text :language
+  end 
+end
 
-DATABASE.execute("CREATE TABLE IF NOT EXISTS terms 
-                  (id INTEGER PRIMARY KEY,
-                   term TEXT)")
+unless ActiveRecord::Base.connection.table_exists?(:translations)
+  ActiveRecord::Base.connection.create_table :translations do |t|
+    t.integer :term_id
+    t.integer :language_id
+    t.text :translation
+  end 
+end
 
-DATABASE.execute("CREATE TABLE IF NOT EXISTS languages 
-                  (id INTEGER PRIMARY KEY,
-                   language TEXT)")
-                   
-DATABASE.execute("CREATE TABLE IF NOT EXISTS translations 
-                  (id INTEGER PRIMARY KEY,
-                  term_id INTEGER,
-                  language_id INTEGER,
-                  translation TEXT)")
-
-DATABASE.execute("CREATE TABLE IF NOT EXISTS users 
-                  (id INTEGER PRIMARY KEY,
-                   username TEXT,
-                   password_hash TEXT)")
-                                                       
-set :database, {adapter: "sqlite3", database: "database/localization.db"}
+unless ActiveRecord::Base.connection.table_exists?(:users)
+  ActiveRecord::Base.connection.create_table :users do |t|
+    t.text :username
+    t.text :password_hash
+  end 
+end
