@@ -3,7 +3,7 @@
 ###################
 
 before '/y3d8jedu38zm10lt' do
-  redirect to ("/login") if session[:user_id] != params[:user_id]
+  redirect to ("/login") unless session[:user_id]
 end
 
 get "/y3d8jedu38zm10lt" do
@@ -24,11 +24,10 @@ get "/login" do
   erb :'user_views/login', :layout => :'boilerplates/boilerplate'
 end
 
-get "/y3d8jedu38zm10lt-ck" do
-  check_me = User.find_by username: params[:username]
-  check_me ||= User.new({password_hash: BCrypt::Password.create("SO_INCREDIBLY_INCONCIEVABLY_INCORRECT")})
-  if check_me.password == params[:password]
-    session[:username] = params[:username]
+post "/verify" do
+  user = User.find_by(username: params[:username])    
+  if BCrypt::Password.new(user.password) == params["password"]
+    session[:user_id] = user.id
     redirect to("/y3d8jedu38zm10lt")
   else
     redirect to("/login")
