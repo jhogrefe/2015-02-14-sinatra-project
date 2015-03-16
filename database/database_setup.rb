@@ -1,3 +1,7 @@
+configure :development do
+  set :database, {adapter: "sqlite3", database: "database/localization.db"}
+end
+
 DATABASE = SQLite3::Database.new('database/localization.db')
 
 
