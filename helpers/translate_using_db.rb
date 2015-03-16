@@ -10,7 +10,7 @@ module DatabaseTranslation
       s1 = Term.where({term: params[:term].downcase})
       if s1[0] == nil
         redirect to("/custom_search?term=#{params[:term]}")
-      else @term = "#{params["term"]}"
+      else @term = (params[:term])
       end
       @s2 = Translation.where({term_id: (s1[0].id)})
     end
