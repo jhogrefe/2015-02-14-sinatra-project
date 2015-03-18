@@ -1,9 +1,9 @@
 <h1><div class="transbox">Languages</div></h1>
 <h2>Below is the current list of languages.</h2>
 <hr>
-<% @language.each do |languages| %>
+<% @lang.each do |langs| %>
   <p>
-     <strong>ID:</strong> <%= languages.id %> / <strong>Language:</strong> <%= languages.language %>
+     <strong>ID:</strong> <%= langs.id %> / <strong>Language:</strong> <%= langs.lang %>
   </p>
 <% end %>
 

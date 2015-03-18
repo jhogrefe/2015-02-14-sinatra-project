@@ -11,9 +11,9 @@ First select an English term and language and then enter the new translation bel
       <% end %>
     </select>
     <br><br>
-    <select name="language_id" width="50" required>
-      <% Language.all.each do |l| %>
-        <option value="<%= l.id %>"><%= l.id %> - <%= l.language %></option>
+    <select name="lang_id" width="50" required>
+      <% Lang.all.each do |l| %>
+        <option value="<%= l.id %>"><%= l.id %> - <%= l.lang %></option>
       <% end %>
     </select>
     <br><br>

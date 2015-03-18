@@ -7,7 +7,7 @@ get "/add_language" do
 end
 
 post "/new_language" do
-  @language = Language.create({language: params[:language]})
+  @lang = Lang.create({lang: params[:lang]})
   erb :'language_views/new_language', :layout => :'boilerplates/admin_boilerplate'
 end
 
@@ -17,8 +17,8 @@ get "/edit_language" do
 end
 
 post "/saved_language" do
-  @language = Language.find(params[:language_id])
-  @language.update({language: params[:language]})
+  @lang = Lang.find(params[:lang_id])
+  @lang.update({lang: params[:lang]})
   erb :'language_views/saved_language', :layout => :'boilerplates/admin_boilerplate'
 end
 
@@ -28,12 +28,12 @@ get "/delete_language" do
 end
 
 post "/deleted_language" do
-  @language = Language.delete(params[:language_id])
+  @lang = Lang.delete(params[:lang_id])
   erb :deleted, :layout => :'boilerplates/admin_boilerplate'
 end
 
 
 get "/fetch_languages" do
-  @language = Language.all
+  @lang = Lang.all
   erb :'language_views/fetch_languages', :layout => :'boilerplates/admin_boilerplate'
 end

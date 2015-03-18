@@ -5,14 +5,14 @@ Select which language you would like to edit and enter the new language in the f
 </p>
 
   <form action="/saved_language" method="post">
-    <select name="language_id">
-      <% Language.all.each do |l| %>
-        <option value="<%= l.id %>"><%= l.id%> - <%= l.language %></option>
+    <select name="lang_id">
+      <% Lang.all.each do |l| %>
+        <option value="<%= l.id %>"><%= l.id%> - <%= l.lang %></option>
       <% end %>
     </select>
     <br><br>
     <strong>Change language to:</strong><br>
-    <input type="text" name="language">
+    <input type="text" name="lang">
     <br><br>
     <input type="submit" value="Submit" class="btn">
   </form>

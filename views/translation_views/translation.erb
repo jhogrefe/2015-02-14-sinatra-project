@@ -6,7 +6,7 @@
 <p>
 <% @s2.each do |translation| %>
    <strong>
-     <%= Language.find(translation.language_id).language %>:&nbsp;
+     <%= Lang.find(translation.lang_id).lang %>:&nbsp;
    </strong> 
      <%= translation.translation %><br><br>
 <% end %>
