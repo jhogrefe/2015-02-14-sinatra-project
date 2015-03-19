@@ -4,6 +4,7 @@
 
 post "/translation" do
   translate_using_db
+  binding.pry
   erb :'translation_views/translation', :layout => :'boilerplates/boilerplate'
 end
 

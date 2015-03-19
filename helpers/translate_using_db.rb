@@ -13,6 +13,7 @@ module DatabaseTranslation
       else @term = (params[:term])
       end
       @s2 = Translator.where({term_id: (s1[0].id)})
+      binding.pry
     end
   end
     
