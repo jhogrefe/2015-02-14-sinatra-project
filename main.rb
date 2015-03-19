@@ -17,11 +17,11 @@ require_relative "helpers/translate_using_db.rb"
 require_relative "helpers/translate_using_gem.rb"
 require_relative "controllers/lang_controller.rb"
 require_relative "controllers/term_controller.rb"
-require_relative "controllers/translation_controller.rb"
+require_relative "controllers/translator_controller.rb"
 require_relative "models/user.rb"
 require_relative "models/term.rb"
 require_relative "models/lang.rb"
-require_relative "models/translation.rb"
+require_relative "models/translator.rb"
 
 enable :sessions
 

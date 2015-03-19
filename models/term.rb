@@ -3,6 +3,6 @@
 # table of the database.
 #
 class Term < ActiveRecord::Base
-  # has_many :langs, :translations
+  # has_many :langs, :translators
 
 end

@@ -26,11 +26,11 @@ unless ActiveRecord::Base.connection.table_exists?(:langs)
   end 
 end
 
-unless ActiveRecord::Base.connection.table_exists?(:translations)
-  ActiveRecord::Base.connection.create_table :translations do |t|
+unless ActiveRecord::Base.connection.table_exists?(:translators)
+  ActiveRecord::Base.connection.create_table :translators do |t|
     t.integer :term_id
     t.integer :lang_id
-    t.text :translation
+    t.text :translator
   end 
 end
 

@@ -1,9 +1,9 @@
 <h1><div class="transbox">Translations</div></h1>
 <h2>Below is the current list of translations.</h2>
 <hr>
-<% @translation.each do |translations| %>
+<% @translator.each do |translators| %>
   <p>
-     <strong>ID:</strong> <%= translations.id %> / <strong>Translation:</strong> <%= translations.translation %>
+     <strong>ID:</strong> <%= translators.id %> / <strong>Translation:</strong> <%= translators.translator %>
   </p>
 <% end %>
 
