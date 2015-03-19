@@ -7,7 +7,7 @@ get "/add_translation" do
 end
 
 post "/new_translation" do
-  @translator = Translator.create({translator: params[:translator]})
+  @translator = Translator.create(params)
   erb :'translation_views/new_translation', :layout => :'boilerplates/admin_boilerplate'
 end
 

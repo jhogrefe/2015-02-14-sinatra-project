@@ -2,7 +2,6 @@ require 'rubygems'
 require 'bundler/setup'
 
 require 'pry'
-require 'pry-remote'
 require 'sinatra'
 require 'sinatra/activerecord'
 configure :development do
