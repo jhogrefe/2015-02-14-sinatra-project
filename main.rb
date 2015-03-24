@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'bundler/setup'
 
+require 'dotenv'
+Dotenv.load
 require 'pry'
 require 'sinatra'
 require 'sinatra/activerecord'
@@ -9,8 +11,7 @@ configure :development do
 end
 require 'bing_translator'
 require 'bcrypt'
-require 'dotenv'
-Dotenv.load
+
 
 require_relative "database/database_setup.rb"
 require_relative "controllers/index_controllers.rb"
