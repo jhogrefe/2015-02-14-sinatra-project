@@ -21,12 +21,17 @@ h2, h3, h4, h5, h6 {
 }
 
 p, body {
-   font-family: 'Nobile', Helvetica, Arial, sans-serif;
+   font-family: Helvetica, Arial, sans-serif;
    -webkit-animation-delay: 0.1s;
    -webkit-animation-name: fontfix;
    -webkit-animation-duration: 0.1s;
    -webkit-animation-iteration-count: 1;
    -webkit-animation-timing-function: linear;
+}
+
+footer {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 75%;  
 }
 
 @-webkit-keyframes fontfix {
