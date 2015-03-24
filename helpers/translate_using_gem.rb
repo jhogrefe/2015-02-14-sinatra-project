@@ -4,7 +4,7 @@ module TranslatorService
 
   def translate_using_gem
     cs1 = BingTranslator.new('free-software-translation',
-    '6njjbzRCq7rG3+CbFZzN+6jEV5ed63U9+2oqkJ9NuKo=', params)
+    ENV['BING_TRANSLATE_KEY'], params)
     if (params[:translate]) == ''
       redirect to("/")
     else
